@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    font-size: 120%;
+    margin: 0;
+    padding: 0;
+}
+
+#updateInfo {
+    font-size: small;
+    color: gray;
+    text-align: right;
+}
+
+#lyrics {
+    max-width: 100%;
+    margin: 0 auto;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    text-align: left;
+    padding: 0.2em;
+}

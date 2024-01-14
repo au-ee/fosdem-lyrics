@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  nats:
+    image: nats:alpine
+    pull_policy: always
+    ports:
+      - "8443:8443"
+      - "4222:4222"
+      - "8222:8222"
+    volumes:
+      - ./nats-conf/nats-server.conf:/etc/nats/nats-server.conf
+      - ./nats-data:/data/jetstream
+      - ./caddy-data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/live.fiftysix.site/:/data/tls:ro
+    depends_on:
+      - caddy
+    restart: unless-stopped    
+
+  caddy:
+    image: caddy:latest
+    pull_policy: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy-data:/data
+      - ./caddy-conf/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy-wwwroot:/wwwroot
+    restart: unless-stopped
