@@ -25,3 +25,8 @@ h1 {
     text-align: left;
     padding: 0.2em;
 }
+
+#container {
+    max-width: 800px;
+    margin: 0 auto;
+}

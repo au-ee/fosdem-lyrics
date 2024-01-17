@@ -21,6 +21,10 @@ const handleLyrics = (newLyrics) => {
 
   let lyricsElement = document.getElementById('lyrics');
   lyricsElement.innerHTML = formatPlainTextToHtml(currentLyrics);
+  confetti();
+  setTimeout(() => {
+    myConfetti.reset();
+  }, 100);
 }
 
 // the communication magic

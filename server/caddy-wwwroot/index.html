@@ -11,13 +11,16 @@
     <meta name="robots" content="noindex, nofollow">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
     <script defer type="module" src="lyrics.js"></script>
   </head>
   <body>
-    <img src="fosdem-lyrics.png" alt="FOSEM lyrics">
-    <div id="updateInfo">Last update: <span id="updateTimestamp">...</span></div>
-    <div id="lyrics"><i class="fa fa-spinner fa-spin" style="color: #000000;"></i> Waiting for lyrics ...</div>
+    <div id="container">
+      <img src="fosdem-lyrics.png" alt="FOSEM lyrics">
+      <div id="updateInfo">Last update: <span id="updateTimestamp">...</span></div>
+      <div id="lyrics"><i class="fa fa-spinner fa-spin" style="color: #000000;"></i> Waiting for lyrics ...</div>
+    </div>
   </body>
 </html>
