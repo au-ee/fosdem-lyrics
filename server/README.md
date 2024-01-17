@@ -10,7 +10,7 @@ With a few modifications, it should be possible for everyone to run a similar se
   - `nats-conf/nats-server.conf`
   - `caddy-wwwroot/lyrics.js`
 
-- Set a custom Bcrypted password for the NATS user `publisher` in `nats-conf/nats-server.conf`. See [documentation](https://docs.nats.io/running-a-nats-service/configuration/securing_nats/auth_intro/username_password#bcrypted-passwords).
+- Set a custom Bcrypted password for the NATS user `publisher` in `nats-conf/nats-server.conf`. See [NATS documentation: Bcrypt password](https://docs.nats.io/running-a-nats-service/configuration/securing_nats/auth_intro/username_password#bcrypted-passwords).
 
 Running `docker compose up -d` starts the following services:
 
