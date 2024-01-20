@@ -5,8 +5,7 @@ This folder contains the server part of my presentation at Fosdem 2024.
 With a few modifications, it should be possible for everyone to run a similar setup on a public server:
 
 - Replace `live.fiftysix.site` by the hostname of the own server, here:
-  - `docker-compose.yaml`
-  - `caddy-conf/Caddyfile`
+  - `.env`
   - `nats-conf/nats-server.conf`
   - `caddy-wwwroot/lyrics.js`
 
@@ -34,3 +33,7 @@ NATS as a message broker, listening on
 - wss://live.fiftysix.site:8443 - NATS over a TLS encrypted web socket
 
 Since the host name matches the one of the web site, the certificate retrieved by the Caddy web server is also mapped into the NATS container.
+
+# MQTT Server (EMQX)
+
+MQTT / MQTT over Websockets is an alternative protocol which can be used to publish messages in the described way.

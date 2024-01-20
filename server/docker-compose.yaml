@@ -11,7 +11,7 @@ services:
     volumes:
       - ./nats-conf/nats-server.conf:/etc/nats/nats-server.conf
       - ./nats-data:/data/jetstream
-      - ./caddy-data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/live.fiftysix.site/:/data/tls:ro
+      - ./caddy-data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/${LYRICS_HOSTNAME}/:/data/tls:ro
     depends_on:
       - caddy
     restart: unless-stopped    
@@ -22,8 +22,22 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    environment:
+      - "LYRICS_HOSTNAME=${LYRICS_HOSTNAME}"
     volumes:
       - ./caddy-data:/data
       - ./caddy-conf/Caddyfile:/etc/caddy/Caddyfile
       - ./caddy-wwwroot:/wwwroot
     restart: unless-stopped
+
+  emqx:
+    image: emqx/emqx:5.4.1
+    pull_policy: always
+    ports:
+      - "8883:8883"   # MQTT over TLS
+      - "8084:8084"   # WSS over TLS
+      - "18083:18083" # Admin Web Interface
+    # env and volumes, see override
+    depends_on:
+      - caddy
+    restart: unless-stopped    
