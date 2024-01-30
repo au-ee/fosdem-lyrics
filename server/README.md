@@ -2,12 +2,12 @@
 
 This folder contains the server part of my presentation at Fosdem 2024.
 
-With a few modifications, it should be possible for everyone to run a similar setup on a public server:
+With a few modifications, it should be possible to run a similar setup on a public server:
 
 - Replace `live.fiftysix.site` by the hostname of the own server, here:
-  - `.env`
   - `nats-conf/nats-server.conf`
   - `caddy-wwwroot/lyrics.js`
+- Copy the contents of `.env.default` to `.env` and adjust the values for your configuration
 
 - Set a custom Bcrypted password for the NATS user `publisher` in `nats-conf/nats-server.conf`. See [NATS documentation: Bcrypt password](https://docs.nats.io/running-a-nats-service/configuration/securing_nats/auth_intro/username_password#bcrypted-passwords).
 
@@ -20,6 +20,8 @@ Which serves the following content:
 - https://live.fiftysix.site - A static web site which subscribes to a message broker to show content received through messages
 
 - https://live.fiftysix.site/nats - Reverse proxy for the system status site of the nats broker
+
+- https://live.fiftysix.site/emqx/ - Reverse proxy for the web interface of the EMQX broker
 
 Caddy automatically acquires a Let's Enyrypt TLS certificate for the site `live.fiftysix.site` which is also mapped to the NATS server container (see below).
 

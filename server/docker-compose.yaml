@@ -8,6 +8,8 @@ services:
       - "8443:8443"
       - "4222:4222"
       - "8222:8222"
+    environment:
+      - "LYRICS_HOSTNAME=${LYRICS_HOSTNAME}"
     volumes:
       - ./nats-conf/nats-server.conf:/etc/nats/nats-server.conf
       - ./nats-data:/data/jetstream
