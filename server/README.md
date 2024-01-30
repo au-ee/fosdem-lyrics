@@ -5,9 +5,9 @@ This folder contains the server part of my presentation at Fosdem 2024.
 With a few modifications, it should be possible to run a similar setup on a public server:
 
 - Replace `live.fiftysix.site` by the hostname of the own server, here:
+  - `.env`
   - `nats-conf/nats-server.conf`
   - `caddy-wwwroot/lyrics.js`
-- Copy the contents of `.env.default` to `.env` and adjust the values for your configuration
 
 - Set a custom Bcrypted password for the NATS user `publisher` in `nats-conf/nats-server.conf`. See [NATS documentation: Bcrypt password](https://docs.nats.io/running-a-nats-service/configuration/securing_nats/auth_intro/username_password#bcrypted-passwords).
 
@@ -35,7 +35,3 @@ NATS as a message broker, listening on
 - wss://live.fiftysix.site:8443 - NATS over a TLS encrypted web socket
 
 Since the host name matches the one of the web site, the certificate retrieved by the Caddy web server is also mapped into the NATS container.
-
-# MQTT Server (EMQX)
-
-MQTT / MQTT over Websockets is an alternative protocol which can be used to publish messages in the described way.

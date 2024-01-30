@@ -4,14 +4,3 @@ header Strict-Transport-Security max-age=31536000
 root * /wwwroot
 
 file_server /*
-
-handle_path /nats/* {
-    rewrite * {path}  # Remove the "/nats" prefix
-    reverse_proxy http://nats:8222
-}
-
-handle_path /emqx/* {
-    rewrite * {path}  # Remove the "/emqx" prefix
-    reverse_proxy http://emqx:18083
-}
-

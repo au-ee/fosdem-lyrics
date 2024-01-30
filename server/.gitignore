@@ -1,6 +1,3 @@
 caddy-data/*
 nats-data/*
 local_notes.md
-.env
-emqx-data/*
-emqx-log/*

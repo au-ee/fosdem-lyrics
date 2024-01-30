@@ -24,11 +24,9 @@ There are two subfolders:
 
   - a NATS server which powers the web page with real-time capabilities
 
-  - an EMQX MQTT server as an alternative protocol to NATS
-
 - demo-publisher ((README)[demo-publisher/README.md])
   
   Just like the music stand software in my example, the shell script in this folder 
-  will publish song texts  to the respective topics on the example NATS and MQTT servers.
+  will publish song texts to the respective topic on the example NATS server.
 
 Markus Renschler / 2024-01
