@@ -1,3 +1,4 @@
 caddy-data/*
 nats-data/*
 local_notes.md
+.private
