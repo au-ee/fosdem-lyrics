@@ -29,4 +29,20 @@ There are two subfolders:
   Just like the music stand software in my example, the shell script in this folder 
   will publish song texts to the respective topic on the example NATS server.
 
-Markus Renschler / 2024-01
+----
+
+This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit [creativecommons.org/licenses/by/4.0](https://creativecommons.org/licenses/by/4.0) or see the `LICENSE.md` file.
+
+## Attribution
+
+If you use or adapt the contents of this repository, you are required to give appropriate attribution by including the following information:
+
+- Author: Markus Renschler
+- Repository: https://github.com/au-ee/fosdem-lyrics
+
+You may provide the attribution in a manner that is reasonable for the medium or means you are using, such as a credits section, readme file, or elsewhere.
+
+## Disclaimer
+
+This license does not grant you any trademark or other intellectual property rights concerning the contents of this repository. If you have questions about the licensing or use of this work, please contact the author at https://github.com/au-ee.
+

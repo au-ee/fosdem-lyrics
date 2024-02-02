@@ -9,7 +9,7 @@ while :
 do
     FILENAME="$(find lyrics -type f | shuf -n 1)"
     
-    # publish to NATS (variant 1)
+    # publish to NATS
     cat $FILENAME | nats publish lyrics
   
     sleep 3
