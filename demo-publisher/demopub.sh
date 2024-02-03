@@ -13,10 +13,10 @@ while :
 do
     FILENAME="$(find lyrics -type f | shuf -n 1)"
     
-    printf  "${GREEN}New Song:"
+    printf  "${GREEN}New Song: "
     head -n1 $FILENAME 
     printf $GRAY
-    
+
     # publish to NATS
     cat $FILENAME | nats publish lyrics
   
